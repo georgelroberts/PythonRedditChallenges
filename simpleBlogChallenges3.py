@@ -11,7 +11,7 @@ def fibonacci():
     first=0
     second=1
     print(first)
-    for i in range (99):
+    for _ in range (99):
         print(second)
         temp=second
         second=second+first
