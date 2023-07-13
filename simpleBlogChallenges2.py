@@ -15,20 +15,23 @@ def mergeLists(list1, list2):
     list1Size=len(list1)
     list2Size=len(list2)
     lengthToLoop=min(list1Size,list2Size)*2
-    
+
     for i in range(lengthToLoop):
         if i%2==0:
             mergedList.append(list1[int(i/2)])
         else:
             mergedList.append(list2[int((i-1)/2)])
-        
+
     if list1Size>list2Size:
-        for i in range(list1Size-list2Size):
-            mergedList.append(list1[int(lengthToLoop/2)+i])
+        mergedList.extend(
+            list1[int(lengthToLoop / 2) + i]
+            for i in range(list1Size - list2Size)
+        )
     elif list2Size>list1Size:
-        for i in range(list2Size-list1Size):
-            mergedList.append(list2[int(lengthToLoop/2)+i])
-    
+        mergedList.extend(
+            list2[int(lengthToLoop / 2) + i]
+            for i in range(list2Size - list1Size)
+        )
     return mergedList
     
 print(mergeLists(['a','b','c'],[1,2,3,4,5]))

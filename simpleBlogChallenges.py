@@ -8,25 +8,13 @@ Write three functions that compute the sum of the numbers in a given list using
 """
 
 def sumListFor(testList):
-    total=0
-    for i in testList:
-        total+=i
-    return total
+    return sum(testList)
 
 def sumListWhile(testList):
-    total=0
-    i=0
-    while i<len(testList):
-        total+=testList[i]
-        i+=1
-    return total
+    return sum(testList[i] for i in range(len(testList)))
 
 def sumListRecurse(testList):
-    if len(testList)==0:
-        #print(testList)
-        return 0
-    else:
-        return testList[0]+sumListRecurse(testList[1:])
+    return 0 if len(testList)==0 else testList[0]+sumListRecurse(testList[1:])
 
 print(sumListFor([3, 4, 1, 6, 26]))
 print(sumListWhile([3, 4, 1, 6, 26]))

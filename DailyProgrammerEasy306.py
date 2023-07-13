@@ -9,7 +9,7 @@ def main():
 	for i in range(1,2000):
 		curRom=numberToRoman(mapRoman,i)
 		if "M" in curRom and "D" in curRom and "C" in curRom and "L" in curRom and "X" in curRom and "V" in curRom and "I" in curRom and len(curRom)==7:
-			print("{} ({}),".format(i, curRom))
+			print(f"{i} ({curRom}),")
 
 def numberToRoman(mapRoman,number):
 	romanResult=""

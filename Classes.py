@@ -7,7 +7,7 @@ class Employees:
         self.pay=pay
 
     def fullname(self):
-        return '{} {}'.format(self.first,self.last)
+        return f'{self.first} {self.last}'
 
 employee1=Employees('George','Roberts','glr28@cam.ac.uk',50000)
 employee2=Employees('George2','Roberts2','glr28@cam.ac.uk2',500002)
